@@ -11,7 +11,6 @@ function AddtoCartBtn({ product, extraClass }) {
   function handleAddtoCart() {
     if (isAuthenticated) {
       dispatch(addProductToCart(product));
-      alert("item added to cart");
     } else navigate("/authentication");
   }
 
