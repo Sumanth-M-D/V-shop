@@ -1,6 +1,7 @@
 import Logo from "../general/Logo";
 import { IoCallOutline } from "react-icons/io5";
 import SocialMedia from "../general/SocialMedia";
+import { NavLink } from "react-router-dom";
 
 function Footer() {
   const usefulLinks = [
@@ -21,9 +22,9 @@ function Footer() {
   ];
 
   const myAccount = [
-    { name: "Sign in", link: "authentication" },
-    { name: "View Cart", link: "cart" },
-    { name: "My wishlist", link: "wishlist" },
+    { name: "Sign in", link: "/authentication" },
+    { name: "View Cart", link: "/cart" },
+    { name: "My wishlist", link: "/wishlist" },
     { name: "Track my order", link: "#" },
     { name: "Help", link: "#" },
   ];
@@ -79,9 +80,9 @@ function List({ heading, items }) {
 
 function ListItem({ item }) {
   return (
-    <li className="text-secondary--shade__2 text-sm my-3 hover:font-semibold duration-200">
-      <a href={item.link}> {item.name}</a>
-    </li>
+    <div className="text-secondary--shade__2 text-sm my-3 hover:font-semibold duration-200">
+      <NavLink to={item.link}>{item.name}</NavLink>
+    </div>
   );
 }
 

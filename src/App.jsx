@@ -18,7 +18,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="products/:id" element={<ProductDetail />} />
           <Route path="authentication" element={<AuthRoutes />}></Route>
-          {/* <Route
+          <Route
             path="cart"
             element={
               <ProtectedRoutes>
@@ -33,9 +33,7 @@ function App() {
                 <Wishlist />
               </ProtectedRoutes>
             }
-          /> */}
-          <Route path="cart" element={<ShoppingCart />} />
-          <Route path="wishlist" element={<Wishlist />} />
+          />
         </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
