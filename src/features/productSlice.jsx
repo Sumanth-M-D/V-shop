@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { BASE_URL, ROWS_PER_PAGE } from "../config/config.js";
-import useProductsPerRow from "../custom_hooks/useProductsPerRow.jsx";
 
 // Initial state for products
 const initialState = {
@@ -19,10 +18,13 @@ export const fetchProducts = createAsyncThunk(
   async (_, { getState }) => {
     const { categories, activeCategoryIndex } = getState().categories;
 
-    const activeCategory = categories[activeCategoryIndex];
-    const response = await fetch(
-      `${BASE_URL}/products/category/${activeCategory}`
-    );
+    let activeCategory = categories[activeCategoryIndex];
+    let URL = `${BASE_URL}/products/category/${activeCategory}`;
+
+    if (activeCategory === "All products") {
+      URL = `${BASE_URL}/products`;
+    }
+    const response = await fetch(URL);
     const data = await response.json();
 
     return data;

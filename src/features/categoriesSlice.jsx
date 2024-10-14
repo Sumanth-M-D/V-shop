@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { BASE_URL } from "../config/config.js";
+import { FaHome } from "react-icons/fa";
 
 const initialState = {
   categories: [],
@@ -15,7 +16,7 @@ export const fetchCategories = createAsyncThunk(
     const response = await fetch(`${BASE_URL}/products/categories`);
     const data = await response.json();
 
-    return data;
+    return ["All products", ...data];
   }
 );
 

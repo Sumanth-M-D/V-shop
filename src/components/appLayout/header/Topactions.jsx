@@ -3,6 +3,7 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logout } from "../../../features/authenticationSlice";
+import { toast } from "react-toastify";
 
 function Topactions() {
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ function Topactions() {
   function handleClick() {
     if (isAuthenticated) {
       dispatch(logout());
+      toast("User has been logged out");
       navigate("/");
     } else {
       navigate("/authentication");

@@ -3,12 +3,13 @@ import Applayout from "./pages/Applayout";
 import Home from "./pages/Home";
 import ProductDetail from "./pages/ProductDetail";
 import AuthRoutes from "./pages/AuthRoutes";
-// import Signup from "./components/authRoutes/Signup";
-// import Login from "./components/authRoutes/Login";
 import ShoppingCart from "./pages/ShoppingCart";
 import Wishlist from "./pages/Wishlist";
 import PageNotFound from "./pages/PageNotFound";
 import ProtectedRoutes from "./components/general/ProtectedRoutes";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -37,6 +38,19 @@ function App() {
         </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
+      <ToastContainer
+        position="top-center"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        transition:Bounce
+      />
     </BrowserRouter>
   );
 }

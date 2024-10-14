@@ -2,6 +2,7 @@ import { MdOutlineAddShoppingCart } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import { addProductToCart } from "../../features/shoppingCartSlice";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function AddtoCartBtn({ product, extraClass }) {
   const dispatch = useDispatch();
@@ -11,6 +12,7 @@ function AddtoCartBtn({ product, extraClass }) {
   function handleAddtoCart() {
     if (isAuthenticated) {
       dispatch(addProductToCart(product));
+      toast("Item has been added to cart");
     } else navigate("/authentication");
   }
 
