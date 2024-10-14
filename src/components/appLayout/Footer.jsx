@@ -30,7 +30,7 @@ function Footer() {
   ];
 
   return (
-    <footer className="bg-secondary  w-screen px-8 sm:px-28  pb-12 pt-20 ">
+    <footer className="bg-secondary  w-full px-8 sm:px-28  pb-12 pt-20 ">
       <div className="grid md:grid-cols-3 gap-14 mb-12 ">
         <div className="md:col-span-1 text-secondary--shade__2 text-sm">
           <Logo />

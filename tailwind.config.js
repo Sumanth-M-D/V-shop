@@ -92,6 +92,7 @@ export default {
     },
     extend: {
       screens: {
+        xxxs: "375px",
         xxs: "435px",
         xs: "528px",
         upperMd: "900px",

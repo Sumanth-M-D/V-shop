@@ -23,8 +23,8 @@ function Topactions() {
       <div className="flex gap-2 items-center">
         <IoCallOutline /> <span>Call +0123456789</span>
       </div>
-      <div className="flex gap-8">
-        <p className="text-sm  flex items-center">
+      <div className="flex gap-3 xxs:gap-8">
+        <p className="flex items-center">
           USD <RiArrowDropDownLine />
         </p>
         <p className="flex items-center">

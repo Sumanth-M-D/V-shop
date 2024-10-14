@@ -15,12 +15,12 @@ function ProductCard({ product }) {
   const productToWishlist = { title, id, image, price };
 
   return (
-    <div className="w-40 xs:w-60 borderSecondary hover:scale-105 duration-200 ">
+    <div className="w-60 xxxs:w-40 xs:w-60 borderSecondary hover:scale-105 duration-200 ">
       <div
-        className="w-full h-60  flex items-end mb-4 bg-secondary px-6 xs:px-14 py-4 cursor-pointer hover:shadow-md duration-200 "
+        className="w-full h-60  flex items-end mb-4 bg-secondary cursor-pointer hover:shadow-md duration-200 "
         onClick={navigateTOProductDetail}
       >
-        <img src={image} />
+        <img src={image} className="object-contain h-5/6 mx-auto px-3 py-3" />
       </div>
 
       <div className="text-center xs:h-72 h-80 flex flex-col justify-around px-4 pb-4 text-secondary--shade__2 ">

@@ -5,7 +5,7 @@ import CategoryList from "./CategoryList";
 
 function Banner() {
   return (
-    <nav className="bg-black text-xs  sm:text-sm flex flex-wrap md:flex-nowrap gap-y-1 w-screen ">
+    <nav className="bg-black text-xs  sm:text-sm flex flex-wrap md:flex-nowrap gap-y-1 w-full ">
       <div className=" flex gap-2 w-2/4 md:w-[20%] items-center bg-primary py-3 ml-2 p-3 ">
         <RxHamburgerMenu />
         <span>Browse categories</span>
