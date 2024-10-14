@@ -19,7 +19,7 @@ function Category({ category, categoryIndex }) {
 
   return (
     <button
-      className={`flex items-center text-sm gap-[1px] xxs:gap-1 capitalize sm:uppercase hover:scale-105  ${
+      className={`flex items-center text-xs xl:text-sm gap-[1px] xxs:gap-1 capitalize sm:uppercase hover:scale-105  ${
         isActive ? "activeCategory" : "text-white"
       }`}
       onClick={handleClick}
