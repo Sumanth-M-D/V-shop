@@ -1,6 +1,6 @@
 # V-Shop: E-Commerce Website
 
-V-Shop is a modern e-commerce web application that allows users to browse products, add them to the cart or wishlist, and proceed through a secure checkout process. This project is built using **React** for the frontend, **Redux** for state management, and **Node.js** with **MongoDB** for backend and database.
+V-Shop is a modern e-commerce frontend web application that allows users to browse products, add them to the cart or wishlist, and proceed through a secure checkout process. This project is built using **React** for the frontend, **Redux** for state management.
 
 ## Features
 
@@ -22,13 +22,6 @@ V-Shop is a modern e-commerce web application that allows users to browse produc
 - **React Router**: Routing for navigating between pages.
 - **Tailwind CSS**: Utility-first CSS framework for responsive design.
 - **React Toastify**: Notifications for important actions (e.g., adding to cart).
-
-### Backend
-
-- **Node.js**: JavaScript runtime for the backend server.
-- **Express.js**: Web framework for building APIs and handling requests.
-- **MongoDB**: NoSQL database for storing products, users, and orders.
-- **Mongoose**: ODM library for interacting with MongoDB.
 
 ### Tools & Other Libraries
 
@@ -52,3 +45,27 @@ V-Shop is a modern e-commerce web application that allows users to browse produc
 ├── package.json           # Project metadata and dependencies
 └── README.md              # Project documentation
 ```
+
+## Installation [Steps to Set Up the Project]
+
+### 1. Clone the repository:
+
+```bash
+git clone https://github.com/your-username/v-shop.git
+```
+
+### 2. Install dependencies:
+
+```bash
+cd v-shop
+npm install
+```
+
+### 3. Start the development server:
+
+```bash
+
+npm start
+```
+
+### 4. Navigate to http://localhost:3000 in your browser to access the application.
