@@ -6,8 +6,10 @@ import ShippingAndReturns from "./ShippingAndReturns";
 import ReviewList from "./Reviews";
 
 function AdditionalDetails({ rating }) {
+  // State to keep track of the currently active tab (element)
   const [activeElement, setActiveElement] = useState(0);
 
+  // Array of elements containing the title and corresponding component to display
   const elements = [
     { title: "Description", element: <Description /> },
     { title: "Additional Information", element: <AdditionalInfo /> },
@@ -34,6 +36,7 @@ function AdditionalDetails({ rating }) {
         ))}
       </div>
       <div className="borderSecondary p-10">
+        {/* Render the currently active element's component */}
         {elements[activeElement].element}
       </div>
     </div>

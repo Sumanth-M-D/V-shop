@@ -1,3 +1,4 @@
+// Component for displaying and updating the quantity of a product
 function ProductQuantity({ quantity = 1, updateQuantity }) {
   return (
     <div className="grid grid-cols-3 justify-items-center text-sm border-secondary--shade__1  py-1 w-full border-[1px] ">

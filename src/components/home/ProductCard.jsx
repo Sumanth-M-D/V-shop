@@ -4,13 +4,16 @@ import AddtoCartBtn from "../general/AddtoCartBtn";
 import AddToWishlistBtn from "../general/AddToWishlistBtn";
 
 function ProductCard({ product }) {
+  // Destructure product properties for easier access
   const { category, id, image, price, rating, title } = product;
   const navigate = useNavigate();
 
+  // Function to navigate to the product details page
   function navigateTOProductDetail() {
     navigate(`/products/${id}`);
   }
 
+  // Prepare product data for cart and wishlist
   const productToCart = { title, id, image, price, quantity: 1 };
   const productToWishlist = { title, id, image, price };
 

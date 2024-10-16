@@ -3,15 +3,18 @@ import BreadCrumb from "../general/BreadCrumb";
 import { useNavigate } from "react-router-dom";
 
 function ProductNav({ id }) {
+  // Accessing the products array from the Redux store
   const { products } = useSelector((state) => state.products);
   const navigate = useNavigate();
 
+  // Breadcrumb elements for navigation
   const breadCrumbElements = [
     { title: "Home", to: "/" },
     { title: "Products", to: "/" },
     { title: "product", to: "" },
   ];
 
+  // Handler function for navigating to the previous product
   function handlePrev() {
     const prevIndex = products.findIndex((ele) => ele.id === id) - 1;
     if (prevIndex < 0) return;
@@ -20,6 +23,7 @@ function ProductNav({ id }) {
     navigate(`/products/${prevId}`);
   }
 
+  // Handler function for navigating to the next product
   function handleNext() {
     const nextIndex = products.findIndex((ele) => ele.id === id) + 1;
     if (nextIndex >= products.length) return;

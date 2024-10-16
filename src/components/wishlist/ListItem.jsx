@@ -8,14 +8,17 @@ function ListItem({ product }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  // Prepare product data to add to the cart with quantity set to 1
   const cartProduct = { id, title, image, price, quantity: 1 };
 
+  // Function to handle the removal of a product from the wishlist
   function handleRemove() {
     dispatch(removeProduct(id));
   }
 
   return (
     <div className="flex gap-2 justify-between pb-3 mb-3 border-b border-secondary--shade__0 ">
+      {/* Navigate to product details page when clicking on the product title or image */}
       <div
         className="listItem__title cursor-pointer"
         onClick={() => navigate(`/products/${id}`)}
@@ -28,6 +31,7 @@ function ListItem({ product }) {
         </h2>
       </div>
 
+      {/* Product price, stock availability and Button to remove the product  */}
       <div className="flex items-center text-xs xs:text-sm">
         <p className="listItem__detail ">${price}</p>
         <span className="listItem__detail w-12 xs:w-20 text-[green] font-semibold">

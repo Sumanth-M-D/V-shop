@@ -10,6 +10,7 @@ function AddToWishlistBtn({ product }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+   // Function to handle adding the product to the wishlist
   function handleAddtoWishlist() {
     if (isAuthenticated) {
       dispatch(addProductToWishlist(product));

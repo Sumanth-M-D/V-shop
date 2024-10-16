@@ -5,6 +5,7 @@ import List from "../components/shoppingcart/CartList";
 import PriceCard from "../components/shoppingcart/PriceCard";
 
 function ShoppingCart() {
+  // Breadcrumb data for navigation on the Shopping Cart page
   const breadCrumbElements = [
     { title: "Home", to: "/" },
     { title: "Shop", to: "/" },

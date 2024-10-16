@@ -12,10 +12,12 @@ import WhatWeProvide from "../components/home/WhatWeProvide";
 import { updateActiveCategory } from "../features/categoriesSlice";
 
 function Home() {
+  // Get products state variables from redux store
   const { status: productStatus, error: productError } = useSelector(
     (state) => state.products
   );
 
+  // Get category state variables from Redux store
   const {
     status: categoryStatus,
     activeCategoryIndex,
@@ -28,22 +30,26 @@ function Home() {
 
   useEffect(() => {
     if (categoryStatus === "success") {
-      // set Default Activecategory
+      // If no active category is selected, set the default to the first category
       if (activeCategoryIndex === "") {
         dispatch(updateActiveCategory(0));
       }
+      // Fetch products after category is set
       dispatch(fetchProducts());
     }
   }, [dispatch, activeCategoryIndex, categoryStatus]);
 
+  // Display loading spinner while products are being fetched
   if (productStatus === "loading") {
     return <Loading />;
   }
 
+  // Display error message if category fetch fails
   if (categoryStatus === "fail") {
     return <Error errorMessage={categoryError} />;
   }
 
+  // Display error message if product fetch fails
   if (productStatus === "fail") {
     return <Error errorMessage={productError} />;
   }

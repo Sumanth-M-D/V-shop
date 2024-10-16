@@ -18,40 +18,49 @@ import MainDetails from "../components/productDetails/MainDetails";
 import AdditionalDetails from "../components/productDetails/additinalDetails/AdditionalDetails";
 
 function ProductDetail() {
-  let { id } = useParams();
+  let { id } = useParams(); // Get the product ID from the URL
   id = Number(id);
 
+  // Get product data and status from Redux store
   const {
     products,
     status: productsStatus,
     error: productsError,
   } = useSelector((state) => state.products);
 
+  // Get categories data from Redux store
   const { categories, activeCategoryIndex } = useSelector(
     (state) => state.categories
   );
 
+  // Get product detail information from Redux store
   const {
     productData,
     error: productDetailsError,
     status: productDetailsStatus,
-    productId,
   } = useSelector((state) => state.productDetails);
 
   const dispatch = useDispatch();
 
+  // Determine whether both product list and product details have successfully loaded
   const showProductDetails =
     productsStatus === "success" && productDetailsStatus === "success";
 
-  // Fetch product details
+  // Fetch product details when the component mounts or the product ID changes
   useEffect(() => {
+    // Check if the product is already in the local state
     const product = products.find((product) => product.id === id);
+
     if (product) {
-      dispatch(setProductData(product)); // Dispatch setProductData action if product found
+      // If product is found, set it in the local state
+      dispatch(setProductData(product));
     } else {
-      dispatch(setProductId(id)); // Set product ID in state
-      dispatch(fetchProductDetails(id)); // Fetch product details if not in local state
+      // If product not found, set product ID and fetch product details from API
+      dispatch(setProductId(id));
+      dispatch(fetchProductDetails(id));
     }
+
+    // Cleanup function to reset product details when component unmounts
     return () => {
       dispatch(resetProductDetails());
     };
@@ -70,20 +79,24 @@ function ProductDetail() {
     }
   }, [productData.category, categories, dispatch, activeCategoryIndex]);
 
+  // Show loading spinner if either products or product details are still loading
   if (productsStatus === "loading" || productDetailsStatus === "loading") {
     return <Loading />;
   }
 
+  // Show error message if fetching product details fails
   if (productDetailsStatus === "fail") {
     return <Error errorMessage={productDetailsError} />;
   }
 
+  // Show error message if fetching products fails
   if (productsStatus === "fail") {
     return <Error errorMessage={productsError} />;
   }
 
   return (
     <>
+      {/* Display product details only if both products and product details are successfully loaded */}
       {showProductDetails && (
         <main className="py-8 px-10">
           <ProductNav id={id} />

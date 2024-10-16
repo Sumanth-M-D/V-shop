@@ -4,11 +4,15 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 function CartBtn() {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Initialize the navigate hook for navigation
+
+  // Get the required data from redux store
   const { isAuthenticated } = useSelector((state) => state.authentication);
   const { cartProducts } = useSelector((state) => state.shoppingCart);
 
+  // Function to handle the button click event
   function handleClick() {
+    // Navigate to the cart page if the user is authenticated; otherwise, navigate to the authentication page
     if (isAuthenticated) {
       navigate("/cart");
     } else {
@@ -16,7 +20,7 @@ function CartBtn() {
     }
   }
 
-  return ( 
+  return (
     <button
       className="flex flex-col items-center px-2 hover:scale-105"
       onClick={handleClick}

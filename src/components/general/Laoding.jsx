@@ -1,7 +1,4 @@
-// function Loading() {
-//   return <div>Loading ....</div>;
-// }
-
+// Loading component to display a spinner during data fetching or processing
 function Loading() {
   return (
     <div className="my-40">

@@ -3,6 +3,7 @@ import { TfiReload } from "react-icons/tfi";
 import { GoInfo } from "react-icons/go";
 import { SlSupport } from "react-icons/sl";
 
+// Array of services provided by the application, each with an ID, icon, title, and content
 const services = [
   {
     id: 1,
@@ -33,6 +34,7 @@ const services = [
 function WhatWeProvide() {
   return (
     <div className="grid grid-cols-2  sm:grid-cols-4  justify-center sm:justify-items-center gap-10 lg:gap-20 py-14 px-4 xs:px-20 sm:px-4  border-b-[1px] border-secondary--shade__0 bg-secondary">
+      {/* Map over the services array to render each Service component */}
       {services.map((service) => (
         <Service service={service} key={service.id} />
       ))}
@@ -42,6 +44,7 @@ function WhatWeProvide() {
 
 export default WhatWeProvide;
 
+// Individual service component
 function Service({ service }) {
   const { icon, title, content } = service;
   return (

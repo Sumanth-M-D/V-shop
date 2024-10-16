@@ -2,6 +2,7 @@ import { useState } from "react";
 import { VscSearch } from "react-icons/vsc";
 
 function Searchbar() {
+  // State to show and hide search bar
   const [showSearch, setShowSearch] = useState(false);
 
   return (

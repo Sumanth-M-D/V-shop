@@ -5,6 +5,7 @@ import {
   updateProductsPerRow,
 } from "../features/productSlice";
 
+// Custom hook to handle updating the number of products per row (per page) based on screen size
 const useProductsPerRow = () => {
   const dispatch = useDispatch();
 
@@ -12,6 +13,7 @@ const useProductsPerRow = () => {
     function handleWindowResize() {
       const windowSize = window.innerWidth;
 
+      // Reset current page when resizing to ensure proper pagination
       dispatch(resetCurrentPage());
 
       if (windowSize >= 1216) {
@@ -25,7 +27,7 @@ const useProductsPerRow = () => {
       }
     }
 
-    // Initial setup
+    // Initial setup: run the function once to set the initial number of products per row
     handleWindowResize();
 
     // Add resize event listener

@@ -1,3 +1,4 @@
+// Error component to display error messages
 function Error({ errorMessage }) {
   return (
     <div className="py-40 flex justify-center text-primary--shade__1">

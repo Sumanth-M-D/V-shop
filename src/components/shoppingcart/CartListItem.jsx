@@ -11,16 +11,19 @@ function CartListItem({ product }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  // Function to update the quantity of the product in the cart
   function updateQuantity(quantity) {
     dispatch(updateProductQuantity({ id, quantity }));
   }
 
+  // Function to remove the product from the cart
   function handleRemove() {
     dispatch(removeProduct(id));
   }
 
   return (
     <div className="flex gap-2 justify-between pb-3 mb-3 border-b border-secondary--shade__0">
+      {/* Product image and title with responsive sizes */}
       <div
         className="listItem__title cursor-pointer"
         onClick={() => navigate(`/products/${id}`)}
@@ -31,6 +34,7 @@ function CartListItem({ product }) {
         <h2 className="text-xs xs:text-sm flex-1">{title}</h2>
       </div>
 
+      {/* Section for price, quantity, total price, and remove button */}
       <div className="flex items-center text-xs xs:text-sm">
         <p className="listItem__detail ">${price}</p>
         <span className="listItem__detail w-16 xs:w-20">

@@ -4,6 +4,7 @@ import SocialMedia from "../general/SocialMedia";
 import { NavLink } from "react-router-dom";
 
 function Footer() {
+  // Array of useful links for site navigation
   const usefulLinks = [
     { name: "About", link: "#" },
     { name: "Our services", link: "#" },
@@ -12,6 +13,7 @@ function Footer() {
     { name: "Contact us", link: "#" },
   ];
 
+  // Array of customer service related links
   const customerService = [
     { name: "Payment Methods", link: "#" },
     { name: "Money back guarantee", link: "#" },
@@ -21,6 +23,7 @@ function Footer() {
     { name: "Privacy policy", link: "#" },
   ];
 
+  // Array of account-related links for the user
   const myAccount = [
     { name: "Sign in", link: "/authentication" },
     { name: "View Cart", link: "/cart" },
@@ -65,6 +68,7 @@ function Footer() {
   );
 }
 
+// List component for rendering a list of items with a heading
 function List({ heading, items }) {
   return (
     <div className="flex-1">
@@ -78,6 +82,7 @@ function List({ heading, items }) {
   );
 }
 
+// ListItem component for rendering individual items in a list
 function ListItem({ item }) {
   return (
     <div className="text-secondary--shade__2 text-sm my-3 hover:font-semibold duration-200">

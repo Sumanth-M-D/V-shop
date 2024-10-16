@@ -9,7 +9,7 @@ function Applayout() {
     <div className="max-w-full">
       <Header />
       <Banner />
-      <Outlet />
+      <Outlet /> {/* Home | ProductDetails | login | cart | wishlist */}
       <Footer />
     </div>
   );

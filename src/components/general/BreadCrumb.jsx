@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
+// BreadCrumb component that receives an array of breadcrumb elements
 function BreadCrumb({ elements }) {
   return (
     <div className="flex gap-2">
@@ -10,6 +11,7 @@ function BreadCrumb({ elements }) {
   );
 }
 
+// Individual Element of the breadcrumb
 function Element({ element, islast }) {
   const navigate = useNavigate();
 

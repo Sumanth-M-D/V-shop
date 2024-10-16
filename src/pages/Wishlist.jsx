@@ -3,6 +3,7 @@ import Cart_Wishlist_Title from "../components/general/Cart_Wishlist_Title";
 import List from "../components/wishlist/List";
 
 function Wishlist() {
+  // Breadcrumb data for navigation on the wishlist page
   const breadCrumbElements = [
     { title: "Home", to: "/" },
     { title: "Shop", to: "/" },

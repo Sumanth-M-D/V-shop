@@ -9,11 +9,12 @@ function AddtoCartBtn({ product, extraClass }) {
   const navigate = useNavigate();
   const { isAuthenticated } = useSelector((state) => state.authentication);
 
+  // Function to handle adding the product to the cart
   function handleAddtoCart() {
     if (isAuthenticated) {
-      dispatch(addProductToCart(product));
+      dispatch(addProductToCart(product)); // Dispatch action to add product to cart
       toast("Item has been added to cart");
-    } else navigate("/authentication");
+    } else navigate("/authentication"); // Navigate to authentication page if user is not authenticated
   }
 
   return (

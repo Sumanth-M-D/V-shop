@@ -8,7 +8,7 @@ import Wishlist from "./pages/Wishlist";
 import PageNotFound from "./pages/PageNotFound";
 import ProtectedRoutes from "./components/general/ProtectedRoutes";
 
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
@@ -38,6 +38,8 @@ function App() {
         </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
+
+      {/* For Toast notifications */}
       <ToastContainer
         position="top-center"
         autoClose={1000}

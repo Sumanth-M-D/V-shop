@@ -10,13 +10,14 @@ function Topactions() {
   const { isAuthenticated } = useSelector((state) => state.authentication);
   const dispatch = useDispatch();
 
+  // Function to handle click events for login/logout button
   function handleClick() {
     if (isAuthenticated) {
-      dispatch(logout());
-      toast("User has been logged out");
+      dispatch(logout()); // Dispatch logout action if the user is authenticated
+      toast("User has been logged out"); // Show a toast notification upon logout
       navigate("/");
     } else {
-      navigate("/authentication");
+      navigate("/authentication"); // Redirect to authentication page if the user is not authenticated
     }
   }
 

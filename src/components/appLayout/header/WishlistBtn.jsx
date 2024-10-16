@@ -6,14 +6,16 @@ import { useSelector } from "react-redux";
 function WishlistBtn() {
   const navigate = useNavigate();
 
+  // Access authentication status and wishlist products from Redux store
   const { isAuthenticated } = useSelector((state) => state.authentication);
   const { wishlistProducts } = useSelector((state) => state.wishlist);
 
+  // Function to handle click events for the wishlist button
   function handleClick() {
     if (isAuthenticated) {
-      navigate("/wishlist");
+      navigate("/wishlist"); // Navigate to wishlist page if the user is authenticated
     } else {
-      navigate("authentication");
+      navigate("authentication"); // Navigate to authentication page if the user is not authenticated
     }
   }
 
