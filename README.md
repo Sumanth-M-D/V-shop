@@ -24,6 +24,7 @@ V-Shop is a modern e-commerce frontend web application that allows users to brow
 - **React Router**: Routing for navigating between pages.
 - **Tailwind CSS**: Utility-first CSS framework for responsive design.
 - **React Toastify**: Notifications for important actions (e.g., adding to cart).
+- **React Hook Form**:For input field validation.
 
 ### Tools & Other Libraries
 
