@@ -8,7 +8,6 @@ V-Shop is a modern e-commerce frontend web application that allows users to brow
 - **Product Detail Page**: Detailed view of individual products.
 - **Shopping Cart**: Add, update, or remove products from the cart.
 - **Wishlist**: Add products to the wishlist and move them to the cart.
-- **Checkout Process**: Secure checkout with multiple shipping options.
 - **Authentication**: Secure login and registration for users.
 - **Responsive Design**: Fully responsive and works across all screen sizes.
 - **Toast Notifications**: Interactive notifications for key actions (e.g., add to cart, remove from wishlist).
