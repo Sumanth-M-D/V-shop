@@ -19,17 +19,17 @@ V-Shop is a modern e-commerce frontend web application that allows users to brow
 
 - **React**: JavaScript library for building user interfaces.
 - **Redux**: State management for predictable state across the app.
+- **Redux Toolkit**: Simplified Redux state management.
+- **React Redux**: Official React bindings for Redux.
 - **React Router**: Routing for navigating between pages.
 - **Tailwind CSS**: Utility-first CSS framework for responsive design.
 - **React Toastify**: Notifications for important actions (e.g., adding to cart).
 
 ### Tools & Other Libraries
 
-- **Parcel**: Development bundler for building the project.
+- **Vite**: For creating the project.
 - **ESLint**: Linting tool for keeping code consistent.
 - **Prettier**: Code formatter to ensure a clean codebase.
-- **Redux Toolkit**: Simplified Redux state management.
-- **React Redux**: Official React bindings for Redux.
 
 ## Project Structure
 
