@@ -10,12 +10,15 @@ function AddToWishlistBtn({ product }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-   // Function to handle adding the product to the wishlist
+  // Function to handle adding the product to the wishlist
   function handleAddtoWishlist() {
     if (isAuthenticated) {
       dispatch(addProductToWishlist(product));
       toast("Item has been added to wishlist");
-    } else navigate("/authentication");
+    } else {
+      toast("User needs to sign in first");
+      navigate("/authentication");
+    }
   }
 
   return (

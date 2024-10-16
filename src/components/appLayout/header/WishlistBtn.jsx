@@ -2,6 +2,7 @@ import { FaRegHeart } from "react-icons/fa";
 import Badge from "./Badge";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 function WishlistBtn() {
   const navigate = useNavigate();
@@ -15,6 +16,7 @@ function WishlistBtn() {
     if (isAuthenticated) {
       navigate("/wishlist"); // Navigate to wishlist page if the user is authenticated
     } else {
+      toast("User needs to sign in first");
       navigate("authentication"); // Navigate to authentication page if the user is not authenticated
     }
   }

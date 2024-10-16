@@ -2,6 +2,7 @@ import { FiShoppingCart } from "react-icons/fi";
 import Badge from "./Badge";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 function CartBtn() {
   const navigate = useNavigate(); // Initialize the navigate hook for navigation
@@ -16,6 +17,7 @@ function CartBtn() {
     if (isAuthenticated) {
       navigate("/cart");
     } else {
+      toast('User needs to sign in first');
       navigate("authentication");
     }
   }

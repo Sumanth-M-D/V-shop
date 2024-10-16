@@ -14,7 +14,10 @@ function AddtoCartBtn({ product, extraClass }) {
     if (isAuthenticated) {
       dispatch(addProductToCart(product)); // Dispatch action to add product to cart
       toast("Item has been added to cart");
-    } else navigate("/authentication"); // Navigate to authentication page if user is not authenticated
+    } else {
+      toast("User needs to sign in first");
+      navigate("/authentication"); // Navigate to authentication page if user is not authenticated
+    }
   }
 
   return (
